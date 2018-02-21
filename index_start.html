@@ -51,16 +51,16 @@
 </head>
 <body>
 	<div id="container">
-		<!--<div class="prod">
+		<div class="prod">
 			<h6>1 / Furniture</h6>
 			<img src="http://media.cymaxstores.com/Images/5/436110-SM2.jpg">
 			<p>Bush Somerset Collection Bookcase</p>
 			<h5>$261.96</h5>
 			<p><a href="proddetail.html#1" class="btn">Buy Now</a></p>
-		</div>-->
+		</div>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script>
 		products = [
 			{
@@ -176,16 +176,6 @@
 				"image": "img/1eaaaf38ddf411bb40e6586461778078.jpg"
 			}
 		];
-
-		$.each(products, function(i, v) {
-			//console.log(i +" | "+ v.product);
-			$("#container").append('<div class="prod"></div>');
-			$('.prod').eq(i).append('<h6>' + i + ' / ' + v.category + '</h6>');
-			$('.prod').eq(i).append('<img src="' + v.image + '">');
-			$('.prod').eq(i).append('<p>' + v.product + '</p>');
-			$('.prod').eq(i).append('<h5>$' + v.price + '</h5>');
-			$('.prod').eq(i).append('<p><a href="proddetail.html#' + i + '" class="btn">Buy Now</a></p>');
-		});
 	</script>
 </body>
 </html>
