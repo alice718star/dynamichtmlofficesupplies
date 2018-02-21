@@ -177,14 +177,26 @@
 			}
 		];
 
+//		$.each(products, function(i, v) {
+//			console.log(i +" | "+ v.product);
+//			$("#container").append('<div class="prod"></div>');
+//			$('.prod').eq(i).append('<h6>' + i + ' / ' + v.category + '</h6>');
+//			$('.prod').eq(i).append('<img src="' + v.image + '">');
+//			$('.prod').eq(i).append('<p>' + v.product + '</p>');
+//			$('.prod').eq(i).append('<h5>$' + v.price + '</h5>');
+//			$('.prod').eq(i).append('<p><a href="proddetail.html#' + i + '" class="btn">Buy Now</a></p>');
+//		});
+
 		$.each(products, function(i, v) {
 			//console.log(i +" | "+ v.product);
 			$("#container").append('<div class="prod"></div>');
-			$('.prod').eq(i).append('<h6>' + i + ' / ' + v.category + '</h6>');
-			$('.prod').eq(i).append('<img src="' + v.image + '">');
-			$('.prod').eq(i).append('<p>' + v.product + '</p>');
-			$('.prod').eq(i).append('<h5>$' + v.price + '</h5>');
-			$('.prod').eq(i).append('<p><a href="proddetail.html#' + i + '" class="btn">Buy Now</a></p>');
+			$('.prod').eq(i).append(`
+				<h6>${i} / ${v.category}</h6>
+				<img src="${v.image}">
+				<p>${v.product}</p>
+				<h5>$${v.price}</h5>
+				<p><a href="proddetail.html#${i}" class="btn">Buy Now</a></p>
+			`);
 		});
 	</script>
 </body>
