@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+	<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<style>
+		* {
+			font-family: helvetica;
+			padding: 0;
+			margin: 0;
+			color: #666;
+			box-sizing: border-box;
+		}
+
+		#container {
+			max-width: 1200px;
+			margin: 40px auto;
+			border: 1px solid #000;
+		}
+
+		.prod {
+			width: 289px;
+			border: 1px solid #000;
+			margin: 5px;
+			display: inline-block;
+			vertical-align: top;
+			padding: 20px;
+			height:430px;
+		}
+
+		.prod img {
+			max-width: 100%;
+			border: 4px double #000;
+			border-radius: 10px;
+			margin: 10px 0px;
+		}
+
+		.prod h5 {
+			color: #F00;
+		}
+
+		.btn {
+			display: inline-block;
+			background-color: #f00;
+			color: #fff;
+			text-decoration: none;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<!--<div class="prod">
+			<h6>1 / Furniture</h6>
+			<img src="http://media.cymaxstores.com/Images/5/436110-SM2.jpg">
+			<p>Bush Somerset Collection Bookcase</p>
+			<h5>$261.96</h5>
+			<p><a href="proddetail.html#1" class="btn">Buy Now</a></p>
+		</div>-->
+	</div>
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>
+		products = [{
+				"id": 1,
+				"category": "Furniture",
+				"product": "Bush Somerset Collection Bookcase",
+				"price": 261.96,
+				"image": "http://media.cymaxstores.com/Images/5/436110-SM2.jpg"
+			},
+			{
+				"id": 2,
+				"category": "Furniture",
+				"product": "Hon Deluxe Fabric Upholstered Stacking Chairs, Rounded Back",
+				"price": 731.94,
+				"image": "https://cdn.digitalbuyer.com/media/catalog/product/cache/1/image/396x409/9df78eab33525d08d6e5fb8d27136e95/isimages/UTHONIS107CU42.jpg"
+			},
+			{
+				"id": 3,
+				"category": "Office Supplies",
+				"product": "Self-Adhesive Address Labels for Typewriters by Universal",
+				"price": 14.62,
+				"image": "https://content.oppictures.com/Master_Images/Master_Variants/Variant_1500/242963.JPG"
+			},
+			{
+				"id": 4,
+				"category": "Furniture",
+				"product": "Bretford CR4500 Series Slim Rectangular Table",
+				"price": 957.57,
+				"image": "https://www.bhphotovideo.com/images/images500x500/Bretford_CR4500_CY_Folding_C_Leg_Rectangular_Table_254498.jpg"
+			},
+			{
+				"id": 5,
+				"category": "Office Supplies",
+				"product": "Eldon Fold 'N Roll Cart System",
+				"price": 22.36,
+				"image": "http://content.etilize.com/spr/EJ/2035356.jpg"
+			},
+			{
+				"id": 6,
+				"category": "Furniture",
+				"product": "Eldon Expressions Wood and Plastic Desk Accessories, Cherry Wood",
+				"price": 48.86,
+				"image": "https://ak1.ostkcdn.com/images/products/6824829/Rolodex-Executive-Cherry-Woodline-II-Desk-Pad-P14354855.jpg"
+			},
+			{
+				"id": 7,
+				"category": "Office Supplies",
+				"product": "Newell 322",
+				"price": 7.28,
+				"image": "https://internal.bdoutdoors.com/2017/01/1328732_a397ed3fe937774e17d89d81378ef304.JPG"
+			},
+			{
+				"id": 8,
+				"category": "Technology",
+				"product": "Mitel 5320 IP Phone VoIP phone",
+				"price": 907.15,
+				"image": "https://images-na.ssl-images-amazon.com/images/I/41pVRkwUk4L._SY355_.jpg"
+			},
+			{
+				"id": 9,
+				"category": "Office Supplies",
+				"product": "DXL Angle-View Binders with Locking Rings by Samsill",
+				"price": 18.5,
+				"image": "https://media.mybinding.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/a/samsill-dxl-soft-click-locking-d-ring-4-navy-view-binder-lg01.jpg"
+			},
+			{
+				"id": 10,
+				"category": "Office Supplies",
+				"product": "Belkin F5C206VTEL 6 Outlet Surge",
+				"price": 114.95,
+				"image": "https://i.ebayimg.com/thumbs/images/g/y~cAAOSwPAxZ9Mae/s-l225.jpg"
+			},
+			{
+				"id": 11,
+				"category": "Furniture",
+				"product": "Chromcraft Rectangular Conference Tables",
+				"price": 1706.18,
+				"image": "https://imageresizer.furnituredealer.net/img/remote/images.furnituredealer.net/img/products%2Fchromcraft%2Fcolor%2Fcustom%20dining%20chromcraft_cd817w%2Bcd85w-b1.jpg"
+			},
+			{
+				"id": 12,
+				"category": "Technology",
+				"product": "Konftel 250 Conference phone - Charcoal black",
+				"price": 911.42,
+				"image": "https://cdn3.volusion.com/2hew6.esfv2/v/vspfiles/photos/910101065-4.jpg?1486481384"
+			},
+			{
+				"id": 13,
+				"category": "Office Supplies",
+				"product": "Xerox 1967",
+				"price": 15.55,
+				"image": "https://smedia.webcollage.net/rwvfp/wc/live/26950253/module/xeroxcaen//_wc/cp/products/1472503281961/tab-860f0393-d58f-422c-ab2a-be2352db0c1f/8c503136-d2af-41f0-a308-45085695c00f.jpg.w960.jpg"
+			},
+			{
+				"id": 14,
+				"category": "Office Supplies",
+				"product": "Fellowes PB200 Plastic Comb Binding Machine",
+				"price": 407.97,
+				"image": "https://images-na.ssl-images-amazon.com/images/I/61MVVT4vpkS._SY355_.jpg"
+			},
+			{
+				"id": 15,
+				"category": "Office Supplies",
+				"product": "Holmes Replacement Filter for HEPA Air Cleaner, Very Large Room, HEPA Filter",
+				"price": 68.81,
+				"image": "https://cdn.instructables.com/F9Y/FBUM/FU54U9YE/F9YFBUMFU54U9YE.LARGE.jpg"
+			},
+			{
+				"id": 16,
+				"category": "Office Supplies",
+				"product": "Storex DuraTech Recycled Plastic Frosted Binders",
+				"price": 2.54,
+				"image": "https://i5.walmartimages.com/asr/ed52f362-12ad-40b9-9d89-f5ce34d4ecd3_1.1eaaaf38ddf411bb40e6586461778078.jpeg"
+			}
+		];
+		
+		$.each(products, function(i,v){
+//			console.log(i +" | "+ v.product);
+			$("#container").append('<div class="prod"></div>');
+			$('.prod').eq(i).append('<h6>'+i+' / '+v.category+'</h6>');
+			$('.prod').eq(i).append('<img src="'+v.image+'">');
+			$('.prod').eq(i).append('<p>'+v.product+'</p>');
+			$('.prod').eq(i).append('<h5>$'+v.price+'</h5>');
+			$('.prod').eq(i).append('<p><a href="proddetail.html#'+i+'" class="btn">Buy Now</a></p>');
+		});
+		
+	</script>
+</body>
+</html>
