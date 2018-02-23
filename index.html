@@ -177,16 +177,19 @@
 			}
 		];
 
-//		$.each(products, function(i, v) {
-//			console.log(i +" | "+ v.product);
-//			$("#container").append('<div class="prod"></div>');
-//			$('.prod').eq(i).append('<h6>' + i + ' / ' + v.category + '</h6>');
-//			$('.prod').eq(i).append('<img src="' + v.image + '">');
-//			$('.prod').eq(i).append('<p>' + v.product + '</p>');
-//			$('.prod').eq(i).append('<h5>$' + v.price + '</h5>');
-//			$('.prod').eq(i).append('<p><a href="proddetail.html#' + i + '" class="btn">Buy Now</a></p>');
-//		});
+/*
+		$.each(products, function(i, v) {
+			console.log(i +" | "+ v.product);
+			$("#container").append('<div class="prod"></div>');
+			$('.prod').eq(i).append('<h6>' + i + ' / ' + v.category + '</h6>');
+			$('.prod').eq(i).append('<img src="' + v.image + '">');
+			$('.prod').eq(i).append('<p>' + v.product + '</p>');
+			$('.prod').eq(i).append('<h5>$' + v.price + '</h5>');
+			$('.prod').eq(i).append('<p><a href="proddetail.html#' + i + '" class="btn">Buy Now</a></p>');
+		});
+*/
 
+/*
 		$.each(products, function(i, v) {
 			//console.log(i +" | "+ v.product);
 			$("#container").append('<div class="prod"></div>');
@@ -198,6 +201,34 @@
 				<p><a href="proddetail.html#${i}" class="btn">Buy Now</a></p>
 			`);
 		});
+*/
+
+/*
+		for (i in products){
+			document.getElementById("container").innerHTML += '<div class="prod"></div>';
+			console.log(document.getElementsByClassName('prod'));
+			document.getElementsByClassName('prod')[i].innerHTML =`
+				<h6>${i} / ${products[i].category}</h6>
+				<img src="${products[i].image}">
+				<p>${products[i].product}</p>
+				<h5>$${products[i].price}</h5>
+				<p><a href="proddetail.html#${i}" class="btn">Buy Now</a></p>
+			`;
+		};
+*/
+
+		for (i in products){
+			document.getElementById("container").innerHTML += '<div class="prod"></div>';
+			console.log(document.getElementsByClassName('prod'));
+			document.getElementsByClassName('prod')[i].innerHTML =`
+				<h6>` + i + ` / ` + products[i].category + `</h6>
+				<img src="` + products[i].image + `">
+				<p>` + products[i].product + `</p>
+				<h5>$` + products[i].price + `</h5>
+				<p><a href="proddetail.html#` + i + `" class="btn">Buy Now</a></p>
+			`;
+		};
+
 	</script>
 </body>
 </html>
