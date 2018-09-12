@@ -218,15 +218,16 @@
 */
 
 		for (i in products){
-			document.getElementById("container").innerHTML += '<div class="prod"></div>';
-			console.log(document.getElementsByClassName('prod'));
-			document.getElementsByClassName('prod')[i].innerHTML =`
-				<h6>` + i + ` / ` + products[i].category + `</h6>
-				<img src="` + products[i].image + `">
-				<p>` + products[i].product + `</p>
-				<h5>$` + products[i].price + `</h5>
-				<p><a href="proddetail.html#` + i + `" class="btn">Buy Now</a></p>
-			`;
+			document.getElementById("container").innerHTML += `
+				<div class="prod">
+					<h6>` + i + ` / ` + products[i].category + `</h6>
+					<img src="` + products[i].image + `">
+					<p>` + products[i].product + `</p>
+					<h5>$` + products[i].price + `</h5>
+					<p>
+						<a href="proddetail.html#` + i + `" class="btn">Buy Now</a>
+					</p>
+				</div>`;
 		};
 
 	</script>
