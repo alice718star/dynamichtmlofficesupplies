@@ -51,17 +51,19 @@
 </head>
 <body>
 	<div id="container">
-		<div class="prod">
+	<!--	<div class="prod">
 			<h6>1 / Furniture</h6>
 			<img src="http://media.cymaxstores.com/Images/5/436110-SM2.jpg">
 			<p>Bush Somerset Collection Bookcase</p>
 			<h5>$261.96</h5>
 			<p><a href="proddetail.html#1" class="btn">Buy Now</a></p>
-		</div>
+		</div>-->
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
+        
+    //products is an array, id/category/product/price/image are keys
 		products = [
 			{
 				"id": 1,
@@ -176,6 +178,42 @@
 				"image": "img/1eaaaf38ddf411bb40e6586461778078.jpg"
 			}
 		];
+        
+     
+        for (var i = 0; i<products.length; ++i){
+            console.log(i);
+            console.log(products[i]);
+            document.getElementById("container").innerHTML+='<div class="prod col-md-4"<h6>'+products[i].id+'/'+products[i].category+'</h6><img src="'+products[i].image+'"><p>'+products[i].product+'</p><h5>$'+products[i].price+'</h5><p><a href="proddetail.html#1" class="btn">Buy Now</a></p></div>';
+        }
+        
+        //instead of " and ' use below 
+        //<h6>${products[i].id} / ${products[i].category}
+        
+        //if you have ; or line break they count as separate statements, so in inner HTML you should not have line breaks
+        
+        //in console log, call products and you will see array, products[0], products[2] etc, products[2].id, products[2]category
+        
+        //document.getElementById('container'), document.getElementById('container').innerHTML to get html from container ID
+        
+    //if you set document.getElementById('container').innerHTML = "hello", you will just get hello. The += appends to the inner HTML
+        
+        /*alternative: in for in loop if data set is array, 
+        for (i in products){
+            console.log(i);
+            console.log(products[i]);
+        }
+        
+        // here you can filter by Office Supplies but you can also use > for price for example:
+        
+           for (var i = 0; i<products.length; ++i){
+            console.log(i);
+            console.log(products[i]);
+            if(products[i].category=="Office Supplies"){
+            document.getElementById("container").innerHTML+='<div class="prod"<h6>'+products[i].id+'/'+products[i].category+'</h6><img src="'+products[i].image+'"><p>'+products[i].product+'</p><h5>$'+products[i].price+'</h5><p><a href="proddetail.html#1" class="btn">Buy Now</a></p></div>';
+            }
+        }
+        */
+    
 	</script>
 </body>
 </html>
